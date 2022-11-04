@@ -34,9 +34,28 @@ button {
 	margin: 0 auto;
 }
 
-/* HEADRE SECTION */
+.grid {
+	display: grid;
+
+}
+
+
+
+.grid__col-6 {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.grid__col-3 {
+	grid-template-columns: repeat(4, 1fr);
+}
+
+
+/* HEADER SECTION */
 
 .header {
+	position: sticky;
+	z-index: 99999;
+	top: 0;
 	height: 60px;
 	background: var(--dark);
 	color: var(--light);
@@ -69,12 +88,12 @@ button {
 .hero {
 	position: relative;
 	display: flex;
-	height: 100vh;
+	height: calc(100vh - 60px);
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
 	padding: 80px 0;
-	background: url("../images/bg.jfif") no-repeat center/cover;
+	background: url("../images/bg.jfif") no-repeat center/cover fixed;
 }
 
 .hero::before {
@@ -106,6 +125,9 @@ button {
 /* HERO SECTION */
 .films {
 	padding: 80px 0;
+	background-color: var(--dark);
+	color: var(--light);
+	border-bottom: 2px solid white;
 }
 
 .films__grid {
@@ -134,4 +156,29 @@ button {
 	text-transform: capitalize;
 	margin-top: 15px;
 	font-size: 24px;
+}
+
+.footer {
+	padding: 70px;
+	background-color: var(--dark);
+	color: var(--light);
+
+}
+
+.footer .container {
+	column-gap: 30px;
+}
+
+.footer__title {
+	font-size: 24px;
+	margin-bottom: 15px;
+}
+
+.footer__link {
+	display: block;
+	font-size: 20px;
+}
+
+.footer__link:not(:last-child) {
+	margin-bottom: 10px;
 }
